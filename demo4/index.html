@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>demo04</title>
+</head>
+<body>
+  <div id="example"></div>
+  <script type="text/javascript" src="../build/react.js"></script>
+  <script type="text/javascript" src="../build/react-dom.js"></script>
+  <script type="text/javascript" src="../build/browser.min.js"></script>
+  <script type="text/babel">
+    var HelloMessage = React.createClass({
+      render: function() {
+        return <h1>Hello, {this.props.name}</h1>
+      }
+    });
+    ReactDOM.render(<HelloMessage name="john"/>, document.getElementById('example'));
+  </script>
+</body>
+</html>
