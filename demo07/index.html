@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>demo04</title>
+  <title>demo07</title>
 </head>
 <body>
   <div id="example"></div>
@@ -10,24 +10,21 @@
   <script type="text/javascript" src="../build/react-dom.js"></script>
   <script type="text/javascript" src="../build/browser.min.js"></script>
   <script type="text/babel">
-    var NodesList = React.createClass({
-      render: function() {
+    var MyComponent = React.createClass({
+      handleClick: function() {
+        this.refs.myTextInput.focus();
+      },
+      render() {
         return (
-          <ol>
-            {
-              React.Children.map(this.props.children, function(child) {
-                return <li>{child}</li>;
-              })
-            }
-          </ol>
+          <div>
+            <input type="text" ref="myTextInput"/>
+            <input type="button" value="Focus the text input" onClick={this.handleClick}/>
+          </div>
         );
       }
     });
     ReactDOM.render(
-      <NodesList>
-        <span>hello</span>
-        <span>world</span>
-      </NodesList>,
+      <MyComponent/>,
       document.getElementById('example')
     );
   </script>
